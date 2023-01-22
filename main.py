@@ -24,14 +24,15 @@ raider = Raiders()
 scoreboard = Scoreboard()
 screen.onkey(fun=gun.move_right, key="Right")
 screen.onkey(fun=gun.move_left, key="Left")
-screen.onkey(fun=bullet.shoot, key="space")
+
 
 
 is_game_on = True
 
 while is_game_on:
-    time.sleep(bullet.bullet_speed)
+    time.sleep(0.1)
     screen.update()
+    screen.onkey(fun=bullet.create_bullet, key="space")
     raider.create_raider()
     raider.move_raiders()
     bullet.shoot()
