@@ -13,7 +13,7 @@ screen.tracer(0)
 line = Turtle()
 line.hideturtle()
 line.penup()
-line.goto(-400,-200)
+line.goto(-400, -200)
 line.pendown()
 line.pensize(width=2)
 line.forward(800)
@@ -25,29 +25,18 @@ scoreboard = Scoreboard()
 screen.onkey(fun=gun.move_right, key="Right")
 screen.onkey(fun=gun.move_left, key="Left")
 
-
-
 is_game_on = True
 
 while is_game_on:
     time.sleep(0.1)
     screen.update()
+    x_position = gun.xcor()
     screen.onkey(fun=bullet.create_bullet, key="space")
     raider.create_raider()
     raider.move_raiders()
     bullet.shoot()
 
-
-
-
-
     # for shoot in range(10):
     #     bullet.shoot()
-
-
-
-
-
-
 
 screen.exitonclick()
