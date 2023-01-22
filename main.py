@@ -1,5 +1,7 @@
 from turtle import Screen
-from gun import Gun, Bullet
+from gun import Gun
+from bullet import Bullet
+from raiders import Raiders
 import time
 
 screen = Screen()
@@ -11,6 +13,7 @@ screen.tracer(0)
 
 gun = Gun()
 bullet = Bullet()
+raider = Raiders()
 screen.onkey(fun=gun.move_right, key="Right")
 screen.onkey(fun=gun.move_left, key="Left")
 screen.onkey(fun=bullet.shoot, key="space")
@@ -19,8 +22,17 @@ screen.onkey(fun=bullet.shoot, key="space")
 is_game_on = True
 
 while is_game_on:
+    time.sleep(0.1)
     screen.update()
-    time.sleep(1)
+    raider.create_raider()
+    raider.move_raiders()
+
+
+
+
+
+    for shoot in range(10):
+        bullet.shoot()
 
 
 
