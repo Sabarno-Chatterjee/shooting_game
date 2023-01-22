@@ -30,17 +30,18 @@ screen.onkey(fun=bullet.shoot, key="space")
 is_game_on = True
 
 while is_game_on:
-    time.sleep(0.1)
+    time.sleep(bullet.bullet_speed)
     screen.update()
     raider.create_raider()
     raider.move_raiders()
+    bullet.shoot()
 
 
 
 
 
-    for shoot in range(10):
-        bullet.shoot()
+    # for shoot in range(10):
+    #     bullet.shoot()
 
 
 
